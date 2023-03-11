@@ -66,7 +66,7 @@ describe('Basic functions of WebDriverIO', () => {
 
     })
 
-    it.only('Misc functions', async () => {
+    it('Misc functions', async () => {
 
         /** 
          * 1) Launch facebook.com

@@ -1,6 +1,6 @@
 describe('basic locator strategies', () => {
     
-    it('Locator strategy: Using id-value', async () => {
+    it.only('Locator strategy: Using id-value', async () => {
         /**
          * 1) Lauch Facebook
          * 2) Type (abcd@gmail.com) in the email or phone number field/element
@@ -23,7 +23,7 @@ describe('basic locator strategies', () => {
          await browser.pause(10000)
     })
 
-    it.only('Locator strategy: Using other attribute instead of id-attribute', async () => {
+    it('Locator strategy: Using other attribute instead of id-attribute', async () => {
         /**
          * 1) Lauch Facebook
          * 2) Type (abcd@gmail.com) in the email or phone number field/element
