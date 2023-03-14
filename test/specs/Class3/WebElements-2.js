@@ -126,6 +126,27 @@
  * 1. type
  *      function: setValue()
  *      input: String-input which is the text that we want to type
+ * 2. click
+ *      function: click()
+ * 3. to find if webElement is enabled 
+ *      function: isEnabled()
+ *      if the webElement is enabled
+ *          function returns true
+ *        otherwise
+ *          function returns false
+ * 4. to find if a webElement is selected or not
+ *      function: isSelected();
+ *      if the webElement is selected
+ *          function returns true
+ *        otherwise
+ *          function returns false
+ * 5. to find if a webElement is displayed or not
+ *      function: isDisplayed();
+ *      if the webElement is displayed
+ *          function returns true
+ *        otherwise
+ *          function returns false
+ * 
  */
 
 // Locator strategies:
@@ -138,9 +159,48 @@
  * 
  *      const webElement = await $('#idValue');
  * 
- * 2. Using other attributes value insead of id-value
+ * 2. Using other attributes value insead of id-attribute
  *      To check if any-attribute has unique value, In chropath -> //tagName[@attrName="attrValue"]
  *      NOTE: Attributs value cannot have spaces (If want to use attributes value with spaces then refer to xpath)
  * 
  *      const webElement = await $('tagName[attrName=attrValue]')
- */     
+ * 
+ * 3. Using the text-Value
+ *      To check if the text-value with webElement is unique, in chropath -> //tagName[text() = 'text value']
+ * 
+ *      const webElement = $('tagName=text value')
+ * 
+ * 4. Using partial attribute's value 
+ *      To check if the partial attributes value is unique, In chropath -> //tagName[contains(@attrName, 'partialAttrValue')]
+ *      Note: Attributes partial value cannot have spaces (If you wat to use attributes partial value with spaces then refer xpath)
+ * 
+ *      const webElement = await $('tagName[attrName*=partialAttrValue]');
+ * 
+ * 5. Using partial text value
+ *      To check if the partial text value is unique, In chropath -> //tagName[contains(text(), 'partial text value')]
+ * 
+ *      const webElement = await $('tagName*=partial text value');
+ * 
+ * 6. Using link-text
+ *      To check if the link text is unique, In chropath -> //a[text()='Link text']
+ * 
+ *      const webElement = await $('=Link text');
+ * 
+ * 7. Using partial link-text
+ *      To chck if the link partial-text is unique, In chropath -> //a[contains(text(), 'partial link text')]
+ * 
+ *      const webElement = await $('*=partial link text');
+ * 
+ * 8. Using tagName
+ *      To check if the tagName with webElement is unique, In chropath -> //tagName
+ *  
+ *      const webElement = await $('<tagName>')
+ * 
+ * 
+ */
+
+/**
+ * Link:    always has an a-tag
+ *          text of a link is called link Link-Text
+ *          after clicking the link, user should land on which webPage that is defined in href-attribute.         
+ */
